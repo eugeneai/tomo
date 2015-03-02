@@ -1,6 +1,7 @@
 *~
 *.gnu
 *.ps
+*.eps
 *.mod
 *.idl
 \#*
