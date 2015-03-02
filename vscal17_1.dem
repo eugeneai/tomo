@@ -1,0 +1,25 @@
+set hidden3d
+#set view 60,160,1,2
+set contour
+set style data lines
+set title "Vector Tomography- 3D: Spherical Harmonic Decomposition"
+set ticslevel 0.2
+#set size 1.,1.
+#set arrow 3 from -1,-1,-1
+#set key 2,3.5,2
+set nokey
+#________________________________
+## Output to PostScript printer:
+#set term postscript eps color 
+#set term tgif
+#set term png
+#set term gif 
+#________________________________
+
+
+set label 3 "Projection" at 9,-60 left
+set output "proj_num_www_1.eps"
+plot "proj_num.gnu", "proj_www.gnu"  
+pause -1 "hit return to continue"
+set nolabel 3
+

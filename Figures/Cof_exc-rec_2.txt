@@ -1,0 +1,49 @@
+NTEN=2
+NNMAX=2
+LL=2
+NALPHA=NBETA=NGAMMA=16
+
+        AACOS(1)=1.
+        IF(L .EQ.0 .AND. M .EQ.0) AACOS(1)=0.5
+
+        AACOS(2)=0.   
+        IF(L .EQ.0 .AND. M .EQ.0) AACOS(2)=0.     
+
+        AACOS(3)=0.   
+        IF(L .EQ.0 .AND. M .EQ.0) AACOS(3)=0. 
+
+        AACOS(4)=-1.   
+ !       IF(L .EQ.0 .AND. M .EQ.0) AACOS(4)=0.5 
+        AACOS(5)=0.0   
+ !       IF(L .EQ.0 .AND. M .EQ.0) AACOS(5)=0.5 
+
+        AACOS(6)=0.0   
+!        IF(L .EQ.0 .AND. M .EQ.0) AACOS(6)=1. 
+
+        AACOS(7)=0.   
+        IF(L .EQ.0 .AND. M .EQ.0) AACOS(7)=0. 
+
+        AACOS(8)=0.   
+        IF(L .EQ.0 .AND. M .EQ.0) AACOS(8)=0. 
+
+        AACOS(9)=0.   
+        IF(L .EQ.0 .AND. M .EQ.0) AACOS(9)=0. 
+
+
+        AASIN(1)= 1.
+
+        AASIN(2)= 0.   
+
+        AASIN(3)= 0.   
+
+        AASIN(4)= 0.
+ 
+        AASIN(5)=0.   
+
+        AASIN(6)=0.   
+
+        AASIN(7)=0.   
+
+        AASIN(8)=0.   
+
+        AASIN(9)=0.   

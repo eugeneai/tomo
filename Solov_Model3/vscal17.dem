@@ -1,0 +1,174 @@
+set hidden3d
+#set view 60,160,1,2
+set contour
+set data style lines
+set title "Vector Tomography- 3D: Spherical Harmonic Decomposition"
+set ticslevel 0.2
+#set size 1.,1.
+#set arrow 3 from -1,-1,-1
+#set key 2,3.5,2
+set nokey
+#________________________________
+## Output to PostScript printer:
+#set term postscript eps color 
+#set term tgif
+#set term png
+#set term gif 
+#________________________________
+
+vs=0.3
+
+set label 3 "Exact vector field: g(x)-g(y) " at 0.5, 0.9 left
+set output "vector_exc_xy.eps"
+plot "vector_exc.gnu" u 1:2:($3*vs):($4*vs) w vector lw 2
+pause -1 "hit return to continue"
+set nolabel 3
+
+vs=0.5
+set label 3 "Reconstructed vector field: g(x)-g(y)" at 0.32, 0.9 left
+set output "vector_rec_xy.eps"
+plot "vector_rec.gnu" u 1:2:($3*vs):($4*vs) w vector lw 2
+pause -1 "hit return to continue"
+set nolabel 3
+
+vs=0.5
+set label 3 "Exact vector field: g(x)-g(z) " at 0.5, 0.9 left
+set output "vector_exc_xz.eps"
+plot "vector_exc_y.gnu" u 1:2:($3*vs):($4*vs) w vector lw 2
+pause -1 "hit return to continue"
+set nolabel 3
+
+#vs=0.15
+set label 3 "Reconstructed vector field: g(x)-g(z)" at 0.32, 0.9 left
+set output "vector_rec_xz.eps"
+plot "vector_rec_y.gnu" u 1:2:($3*vs):($4*vs) w vector lw 2
+pause -1 "hit return to continue"
+set nolabel 3
+
+
+set label 3 "Exact vector field: g(y)-g(z) " at 0.5, 0.9 left
+set output "vector_exc_yz.eps"
+plot "vector_exc_x.gnu" u 1:2:($3*vs):($4*vs) w vector lw 2
+pause -1 "hit return to continue"
+set nolabel 3
+
+#vs=0.15
+set label 3 "Reconstructed vector field: g(y)-g(z)" at 0.32, 0.9 left
+set output "vector_rec_yz.eps"
+plot "vector_rec_x.gnu" u 1:2:($3*vs):($4*vs) w vector lw 2
+pause -1 "hit return to continue"
+set nolabel 3
+
+set key
+set zrange [-0.25:0.3]
+set label 3 
+set output "model_X_exc_1.eps" 
+splot "model_X.gnu"   
+pause -1 "hit return to continue"
+set nolabel 3
+
+set label 3 
+set output "model_X_rec_1.eps" 
+#set zrange [-0.7:1.5]
+splot "model_X_rec.gnu"   
+pause -1 "hit return to continue"
+set nolabel 3
+
+set label 3 
+#"Model" at 9,-60 left
+#set zrange [-0.7:1.5]
+set output "model_Y_exc_1.eps"
+splot "model_Y.gnu"   
+pause -1 "hit return to continue"
+set nolabel 3
+
+
+set label 3 
+#"Model" at 9,-60 left
+#set zrange [-0.7:1.5]
+set output "model_Y_rec_1.eps"
+splot "model_Y_rec.gnu"   
+pause -1 "hit return to continue"
+set nolabel 3
+
+set label 3 
+#"Model" at 9,-60 left
+set zrange [-0.6:0.7]
+set output "model_Z_exc_1.eps"
+splot "model_Z.gnu"   
+pause -1 "hit return to continue"
+set nolabel 3
+
+set label 3 
+#"Model" at 9,-60 left
+#set zrange [-1.0:1.0]
+set output "model_Z_rec_1.eps"
+splot "model_Z_rec.gnu"   
+pause -1 "hit return to continue"
+set nolabel 3
+
+set label 3 "Projection" at 9,-60 left
+set output "proj_num_www_1.eps"
+plot "proj_num.gnu","proj_www.gnu"  
+pause -1 "hit return to continue"
+set nolabel 3
+
+set label 3 
+set zrange [-4.0:4.0]
+#"Projection" at 9,-60 left
+splot "phaze_exc_x.gnu"  
+pause -1 "hit return to continue"
+set nolabel 3
+
+set label 3 
+#"Projection" at 9,-60 left
+splot "phaze_rec_x.gnu"  
+pause -1 "hit return to continue"
+set nolabel 3
+
+set label 3 
+set zrange [-4.0:4.0]
+splot "phaze_exc_y.gnu"  
+pause -1 "hit return to continue"
+set nolabel 3
+
+set label 3 
+splot "phaze_rec_y.gnu"  
+pause -1 "hit return to continue"
+set nolabel 3
+
+
+set label 3 
+set zrange [-4.0:4.0]
+splot "phaze_exc_z.gnu"  
+pause -1 "hit return to continue"
+set nolabel 3
+
+set label 3 
+splot "phaze_rec_z.gnu"  
+pause -1 "hit return to continue"
+set nolabel 3
+
+#------------------------------------------
+set label 3 "Right Part" at 9,-60 left
+set output "cof_exc_rec.eps"
+#set output "vcof1.eps"
+#set ylabel 'values X_{/Symbol n}' 
+#set xlabel 'coefficient number {/Symbol n}' 
+#set yrange [-0.2:1.2]
+plot "cof_exc.gnu"lw 2,"cof_rec.gnu" lw 2
+#plot "Xnu_exc.gnu" lw 2,"Xnu_rec.gnu" lw 2 
+pause -1 "hit return to continue"
+set nolabel 3
+
+
+
+
+
+
+
+
+
+
+
+

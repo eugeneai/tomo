@@ -1,0 +1,39 @@
+set hidden3d
+#set view 60,160,1,2
+set contour
+set data style lines
+set title "Vector Tomography- 3D: Spherical Harmonic Decomposition"
+set ticslevel 0.2
+#set size 1.,1.
+#set arrow 3 from -1,-1,-1
+#set key 2,3.5,2
+set nokey
+#________________________________
+## Output to PostScript printer:
+#set term postscript eps color 
+#set term tgif
+#set term png
+#set term gif 
+#________________________________
+set label 3 
+set multiplot
+#set zrange [-25:25]
+set cntrparam levels 40
+set cntrparam levels incremental 0, 0.1, 1
+set contour base
+#set output "model_X_exc_1.eps" 
+splot "proj_www.gnu"   
+#pause -1 "hit return to continue"
+set cntrparam levels 40
+set cntrparam levels incremental -25, 1, 0
+#set contour base
+#set output "model_X_exc_1.eps" 
+splot "proj_www.gnu"  
+
+#vs=0.2
+#plot "vector_exc.gnu" u 1:2:($3*vs):($4*vs) w vector lw 2
+ 
+set nomultiplot
+pause -1 "hit return to continue"
+set nolabel 3
+
